@@ -1,0 +1,487 @@
+/* =========================================
+   SIDEBAR DASHBOARD LAYOUT
+========================================= */
+
+:root {
+    --sidebar-width: 260px;
+    --sidebar-bg: #1f2937;
+    --sidebar-text: #cbd5e1;
+    --sidebar-active: #2563eb;
+    --header-height: 70px;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-family: system-ui, -apple-system, "Segoe UI",
+        Roboto, Arial, sans-serif;
+    display: block;
+}
+
+/* =========================================
+   LEFT SIDEBAR
+========================================= */
+
+.sidebar,
+.sidebar.offcanvas-lg {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1045;
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #374151;
+}
+
+.sidebar-header {
+    height: var(--header-height);
+    min-height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    border-bottom: 1px solid #374151;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff !important;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-brand span {
+    color: #ffffff !important;
+}
+
+.sidebar-brand i {
+    color: #3b82f6 !important;
+    font-size: 25px;
+}
+
+.sidebar-brand i {
+    color: #3b82f6;
+    font-size: 25px;
+}
+
+.sidebar-body {
+    flex: 1;
+    padding: 25px 14px;
+    overflow-y: auto;
+}
+
+.sidebar-section-label {
+    padding: 8px 12px 14px;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    color: #cbd5e1 !important;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link i {
+    color: #94a3b8 !important;
+    font-size: 19px;
+    width: 22px;
+    text-align: center;
+}
+
+.sidebar-link:hover {
+    background-color: #374151 !important;
+    color: #ffffff !important;
+}
+
+.sidebar-link:hover i {
+    color: #ffffff !important;
+}
+
+.sidebar-link.active {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
+}
+
+.sidebar-link.active i {
+    color: #ffffff !important;
+}
+
+.sidebar-link i {
+    font-size: 19px;
+    width: 22px;
+    text-align: center;
+}
+
+.sidebar-link:hover {
+    background: #374151;
+    color: white;
+}
+
+.sidebar-link.active {
+    background: var(--sidebar-active);
+    color: white;
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
+}
+
+/* Sidebar User Footer */
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border-top: 1px solid #374151;
+}
+
+.sidebar-user-icon {
+    font-size: 30px;
+    color: #93c5fd;
+}
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.sidebar-user-info strong {
+    font-size: 13px;
+    color: #ffffff !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-user-info small {
+    color: #94a3b8 !important;
+}
+
+.sidebar-user-icon {
+    font-size: 30px;
+    color: #60a5fa !important;
+}
+
+.sidebar-footer {
+    background-color: #1f2937 !important;
+    border-top: 1px solid #374151 !important;
+}
+
+.sidebar-user-info small {
+    color: #94a3b8;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header {
+    height: var(--header-height);
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    margin-left: var(--sidebar-width);
+    padding: 0 28px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-header-title {
+    font-size: 17px;
+    font-weight: 650;
+    color: #1e293b;
+}
+
+.user-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: transparent;
+    color: #334155;
+    font-size: 14px;
+}
+
+.user-menu-button:hover,
+.user-menu-button:focus {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.app-main {
+    min-height: calc(100vh - var(--header-height));
+    margin-left: var(--sidebar-width);
+    padding: 0;
+}
+
+.app-main>.container-fluid {
+    max-width: 1600px;
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+/* Existing footer alignment */
+
+body>footer {
+    margin-left: var(--sidebar-width);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+.sidebar-toggle {
+    border: none;
+    color: #334155;
+    padding: 0;
+}
+
+.sidebar-toggle:hover {
+    background: #f1f5f9;
+}
+
+.sidebar-backdrop {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+
+    .sidebar {
+        --bs-offcanvas-width: 260px;
+        width: 260px;
+        height: 100vh;
+    }
+
+    .top-header {
+        margin-left: 0;
+        padding: 0 16px;
+    }
+
+    .app-main {
+        margin-left: 0;
+    }
+
+    .app-main>.container-fluid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    body>footer {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .top-header {
+        padding: 0 12px;
+    }
+
+    .top-header-title {
+        font-size: 15px;
+    }
+
+}
+
+/* =========================================
+   GUEST LAYOUT - LOGIN & REGISTER
+   No sidebar for unauthenticated visitors
+========================================= */
+
+body.guest-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Guest Header */
+.guest-layout .top-header {
+    margin-left: 0 !important;
+    width: 100%;
+    padding: 0 28px;
+}
+
+/* Guest Main Content */
+.guest-layout .app-main {
+    margin-left: 0 !important;
+    width: 100%;
+    flex: 1;
+}
+
+/* Center Login and Register Pages */
+.guest-layout .app-main>.container-fluid {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Guest Footer */
+.guest-layout>footer,
+.guest-layout footer {
+    margin-left: 0 !important;
+}
+
+/* Hide Sidebar for Guests */
+.guest-layout .sidebar {
+    display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .guest-layout .top-header {
+        padding: 0 16px;
+    }
+}
+
+
+/* =========================================
+   CANDIDATE TABLE - COMPACT ROW DESIGN
+========================================= */
+
+/* Compact table rows */
+.table-responsive .table {
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.table-responsive .table th {
+    padding: 12px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.table-responsive .table td {
+    padding: 10px 14px;
+    vertical-align: middle;
+}
+
+/* Candidate photo */
+.candidate-avatar,
+.candidate-avatar-placeholder {
+    width: 55px !important;
+    height: 55px !important;
+    min-width: 55px;
+    max-width: 55px;
+    min-height: 55px;
+    max-height: 55px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Placeholder photo */
+.candidate-avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    color: #94a3b8;
+    font-size: 24px;
+}
+
+/* Candidate name */
+.table-responsive .table td .fw-bold {
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+/* Course and year */
+.table-responsive .table td .text-muted.small {
+    font-size: 11px;
+}
+
+/* Position badge */
+.table-responsive .table .badge {
+    font-size: 11px;
+    padding: 5px 8px !important;
+}
+
+/* Platform summary */
+.table-responsive .table td .small {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Action buttons */
+.table-responsive .btn-group-sm>.btn {
+    padding: 5px 9px;
+    font-size: 12px;
+}
+
+/* Prevent oversized images from expanding rows */
+.table-responsive .table td img {
+    max-width: 55px !important;
+    max-height: 55px !important;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .table-responsive .table {
+        min-width: 750px;
+    }
+
+    .candidate-avatar,
+    .candidate-avatar-placeholder {
+        width: 45px !important;
+        height: 45px !important;
+        min-width: 45px;
+        max-width: 45px;
+        min-height: 45px;
+        max-height: 45px;
+    }
+}
+
+
+/* Candidate Card - Clickable Cursor */
+.candidate-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.candidate-card:hover {
+    cursor: pointer;
+    border-color: #2563eb !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+/* Keep pointer cursor on candidate content */
+.candidate-card * {
+    cursor: pointer;
+}
